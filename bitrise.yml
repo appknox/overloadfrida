@@ -29,7 +29,7 @@ workflows:
     - script:
         deps:
           brew:
-          - name: python
+          - name: python3
         inputs:
         - content: |-
             #!/usr/bin/env bash
