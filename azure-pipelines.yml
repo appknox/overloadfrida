@@ -30,14 +30,9 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
-- task: Bash@3
-  env:
-    APPKNOX_ACCESS_TOKEN: $(appknox_token)
+    
+- task: appknox@0
   inputs:
-    targetType: 'inline'
-    script: |
-      set -e
-      curl -L https://github.com/appknox/appknox-go/releases/download/0.0.2/appknox-`uname -s`-x86_64 > appknox && chmod +x appknox
-      ./appknox upload output/overloadfrida.ipa
-      rm -f appknox
-
+    filePath: 'output/overloadfrida.ipa'
+    accessToken: '$(appknox_token)'
+    riskThreshold: 'high'
