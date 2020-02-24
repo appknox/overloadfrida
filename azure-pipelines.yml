@@ -34,5 +34,5 @@ steps:
 - task: appknox@0
   inputs:
     filePath: 'output/overloadfrida.ipa'
-    accessToken: '$(appknox_token)'
+    accessToken: '$(access_token)'
     riskThreshold: 'high'
