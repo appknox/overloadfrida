@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     @IBAction func overloadNSLog(sender: UIButton) {
         let num:Int = Int(iterationInput.text!) ?? 0
         let alertController = UIAlertController(title: "Hello", message: "Hello \(num + 1)",
-                                                preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                                                preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
         var i = 0
         while i < num {
