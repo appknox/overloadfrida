@@ -29,7 +29,7 @@ workflows:
     - script:
         deps:
           brew:
-          - name: python3
+          - name: curl
         inputs:
         - content: |-
             #!/usr/bin/env bash
@@ -40,8 +40,9 @@ workflows:
             set -x
 
             # write your script here
-            pip3 install appknox
-            appknox upload $BITRISE_IPA_PATH
+            curl -L https://github.com/appknox/appknox-go/releases/download/1.1.2/appknox-`uname -s`-x86_64 > appknox && chmod +x appknox
+            ./appknox upload $BITRISE_IPA_PATH
+            rm ./appknox
 app:
   envs:
   - opts:
